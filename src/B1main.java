@@ -3,18 +3,21 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class B1main {
-    private static boolean isPrime(int n) {
-        // so nguyen n < 2 khong phai la so nguyen to
-        if (n < 2) {
+    private boolean isPrime(int n) {
+        if (n <= 1)
             return false;
-        }
-        // check so nguyen to khi n >= 2
-        int squareRoot = (int) Math.sqrt(n);
-        for (int i = 2; i <= squareRoot; i++) {
-            if (n % i == 0) {
+ 
+        else if (n == 2)
+            return true;
+ 
+        else if (n % 2 == 0)
+            return false;
+ 
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i == 0)
                 return false;
-            }
         }
+
         return true;
     }
 
