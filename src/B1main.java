@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class B1main {
-    private boolean isPrime(int n) {
+    private static boolean isPrime(int n) {
         if (n <= 1)
             return false;
  

@@ -7,7 +7,7 @@ public class B1 extends Thread {
     @Override
     public void run() {
         for (Integer a : mangb) {
-            if (isPrimeNumber(a)) {
+            if (isPrime(a)) {
                 count++;
                 // System.out.println(this.getName() + " " + a);
             }
