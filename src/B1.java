@@ -9,7 +9,7 @@ public class B1 extends Thread {
         for (Integer a : mangb) {
             if (isPrime(a)) {
                 count++;
-                // System.out.println(this.getName() + " " + a);
+                System.out.println(this.getName() + " " + a);
             }
         }
     }

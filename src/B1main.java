@@ -17,7 +17,6 @@ public class B1main {
             if (n % i == 0)
                 return false;
         }
-
         return true;
     }
 
@@ -27,6 +26,9 @@ public class B1main {
         long start, end;
         System.out.println("Nhap N = ");
         n = sc.nextInt();
+        if(n < 20){
+            n = 21;
+        }
         sc.nextLine();
         System.out.println("So luong ban muon nhap ");
         numberofthread = sc.nextInt();
@@ -56,20 +58,34 @@ public class B1main {
         }
         System.out.println("------------------");
         System.out.println("Tong so nguyen to khi chay da luong la: " + count);
-        end = System.currentTimeMillis();
-        System.out.println("Da luong: " + (end - start));
         System.out.println("------------------");
+        end = System.currentTimeMillis();
+        long multiplethread = 0;
+        multiplethread = end - start;
         // single thread
         start = System.currentTimeMillis();
         count = 0;
-        //  count element number from array
+        //  count prime number from array
         for (Integer in : mang) {
-            if (isPrime(in))
+            if (isPrime(in)){
                 count++;
-            // System.out.println("Don luong " + in);
+            System.out.println("Don luong " + in);
+            }
         }
+        System.out.println("------------------");
         System.out.println("Tong so nguyen to khi chay don luong la " + count);
         end = System.currentTimeMillis();
-        System.out.println("Don luong: " + (end - start));
+        System.out.println("------------------");
+        System.out.println("Da luong: " + multiplethread + " milliseconds ");
+        long singlethread = 0;
+        System.out.println("Don luong: " + (end - start) + " milliseconds ");
+        singlethread = end - start;
+        System.out.println("------------------");
+        if(singlethread < multiplethread){
+            System.out.println("Don luong chay nhanh hon da luong");
+        }
+        else{
+            System.out.println("Da luong chay nhanh hon don luong");
+        }
     }
 }
